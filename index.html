@@ -7,52 +7,100 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<title>Book Page Tipddy</title>
 	<style type="text/css">
-		body{
-			background: url('fondo.jpg');
+	
+		body {
+		height: 100%;
+		width: 100%;
+		min-height: 100%;
+		min-width: 100%;
+		background: url('fondo.jpg');
 		}
-		#album{
-			margin-top: 180px;
-			width:600px;
-			height: 500px;
-			margin-left: 200px;
-			align-content: center;
+		#flipbook{
+					margin-top: 180px;
+					width:600px;
+					height: 500px;
+					margin-left: 200px;
+					align-content: center;
+				}
+
+		body {
+		overflow: hidden;
+		background-color: #fcfcfc;
+		margin: 0;
+		padding: 0;
+		}
+
+		.flipbook-viewport {
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		}
+
+		.flipbook-viewport .container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: auto;
+		}
+
+		.flipbook-viewport .flipbook {
+		width: 922px;
+		height: 600px;
+		}
+
+		.flipbook-viewport .page {
+		width: 461px;
+		height: 600px;
+		background-color: white;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		}
+
+		.flipbook .page {
+		-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		-ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		-o-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+		}
+
+		.flipbook-viewport .page img {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		margin: 0;
+		}
+
+		.flipbook-viewport .shadow {
+		-webkit-transition: -webkit-box-shadow 0.5s;
+		-moz-transition: -moz-box-shadow 0.5s;
+		-o-transition: -webkit-box-shadow 0.5s;
+		-ms-transition: -ms-box-shadow 0.5s;
+		-webkit-box-shadow: 0 0 20px #ccc;
+		-moz-box-shadow: 0 0 20px #ccc;
+		-o-box-shadow: 0 0 20px #ccc;
+		-ms-box-shadow: 0 0 20px #ccc;
+		box-shadow: 0 0 20px #ccc;
 		}
 	</style>
 </head>
 <body>
 
-	    <!-- Slider main container -->
-<div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper" id="album">
-      <!-- Slides -->
-      <div class="swiper-slide" style="background: url('book1.jpg'); background-size: 100% 100%;"></div>
-	  <div class="swiper-slide" style="background: url('book2.jpg'); background-size: 100% 100%;"></div>
-	  <div class="swiper-slide" style="background: url('book3.jpg'); background-size: 100% 100%;"></div>
-	  <div class="swiper-slide" style="background: url('book4.jpg'); background-size: 100% 100%;"></div>
-	  <div class="swiper-slide" style="background: url('book5.jpg'); background-size: 100% 100%;"></div>
-	  <div class="swiper-slide" style="background: url('book6.jpg'); background-size: 100% 100%;"></div>
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-  
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-  </div>
 
-<div id="album">
-	<div
+<div class="flipbook-viewport">
+<div class="container">
+<div id="flipbook">
 	<div style="background: url('book1.jpg'); background-size: 100% 100%;"></div>
 	<div style="background: url('book2.jpg'); background-size:cover;"></div>
 	<div style="background: url('book3.jpg'); background-size:cover;"></div>
 	<div style="background: url('book4.jpg'); background-size:cover;"></div>
 	<div style="background: url('book5.jpg'); background-size:cover;"></div>
 	<div style="background: url('book6.jpg'); background-size:cover;"></div>
-
+</div>
+</div>
 </div> 
 
 
@@ -63,8 +111,15 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="turn.js"></script>
 <script>
-	$('#album').turn({gradients: true, acceleration: true});
+	$('#flipbook').turn({
+		gradients: true,
+		acceleration: true,
+   
+		});
+
 </script>
+
+
 </body>
 </html>
 
